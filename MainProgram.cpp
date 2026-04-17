@@ -107,7 +107,7 @@ public:
     void setGpa(double g) {
         // YOUR CODE HERE
         if (g<=4 && g>=0.0){
-        gpa= gpa;
+        gpa= g;
         }
     }
 
