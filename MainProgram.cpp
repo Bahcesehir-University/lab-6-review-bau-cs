@@ -67,7 +67,7 @@ public:
     // Print: "Student [name] destroyed"
     ~Student() {
         // YOUR CODE HERE
-        cout << "Student " << name << " destroyed" << endl;
+        cout << "Student " << name << " destroyed";
     }
 
     // ----- Task 2: Getters (Encapsulation) -----
@@ -106,7 +106,7 @@ public:
     // If out of range, keep current GPA.
     void setGpa(double g) {
         // YOUR CODE HERE
-        if (g>4 && g<0){
+        if (g<=4 && g>=0.0){
         gpa= gpa;
         }
     }
@@ -118,11 +118,11 @@ public:
     // Hint: loop through each character and use toupper()
     string getFormattedName() const {
         // YOUR CODE HERE
-         string asd=name;
-         for (char &c : asd) {
-        c = toupper(c);  
+         string temp =name;
+         for (int i =0 ; temp.length() ; i++) {
+              temp[i] = toupper(temp[i]);
          }
-        return asd;
+        return temp;
     }
 
     // ----- Task 5: Operator Overloading -----
