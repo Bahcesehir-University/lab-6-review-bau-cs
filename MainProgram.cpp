@@ -139,10 +139,7 @@ public:
     // Compare by GPA (lower GPA = "less than")
     bool operator<(const Student& other) const {
         // YOUR CODE HERE
-        if (gpa<other.gpa)
-        return other.gpa;
-        else
-        return gpa;
+        return gpa < other.gpa;
     }
 
     // TODO 5c: Stream insertion operator (<<)
