@@ -67,7 +67,7 @@ public:
     // Print: "Student [name] destroyed"
     ~Student() {
         // YOUR CODE HERE
-        cout << "Student " << name << " destroyed";
+        cout << "Student " << name << " destroyed" << endl;
     }
 
     // ----- Task 2: Getters (Encapsulation) -----
@@ -119,7 +119,7 @@ public:
     string getFormattedName() const {
         // YOUR CODE HERE
          string temp =name;
-         for (int i =0 ; temp.length() ; i++) {
+         for (int i =0 ; i < temp.length() ; i++) {
               temp[i] = toupper(temp[i]);
          }
         return temp;
@@ -147,7 +147,7 @@ public:
     // Example: "Student(Ali, ID: 101, GPA: 3.5)"
     friend ostream& operator<<(ostream& os, const Student& s) {
         // YOUR CODE HERE
-        os << s.name << " (GPA: " << s.gpa << ")";
+        os << "Student("<<s.name<<" ID: " << s.id<<", GPA: " << s.gpa<<")";
         return os;
     }
 };
@@ -160,13 +160,22 @@ public:
 // Version 1: Takes two Student references, returns the one with higher GPA
 Student findBestStudent(const Student& a, const Student& b) {
     // YOUR CODE HERE
+    if (a< b){
+        return b;
+    }
     return a;
 }
 
 // Version 2: Takes an array of Students and its size, returns the one with highest GPA
 Student findBestStudent(Student arr[], int size) {
     // YOUR CODE HERE
-    return arr[0];
+    Student best = arr [0];
+    for(int i = 1 ; i< size ; i++){
+        if(best < arr[i])
+        best = arr[i];
+        
+    }
+    return best;
 }
 
 // ================================
