@@ -97,7 +97,7 @@ public:
     void setName(string n) {
         // YOUR CODE HERE
          if (!n.empty()){
-         n=name;
+         name = n;
          }
     }
 
@@ -107,7 +107,7 @@ public:
     void setGpa(double g) {
         // YOUR CODE HERE
         if (g>4 && g<0){
-        g= gpa;
+        gpa= gpa;
         }
     }
 
@@ -139,7 +139,10 @@ public:
     // Compare by GPA (lower GPA = "less than")
     bool operator<(const Student& other) const {
         // YOUR CODE HERE
-        return gpa < other.gpa;
+        if (gpa<other.gpa)
+        return other.gpa;
+        else
+        return gpa;
     }
 
     // TODO 5c: Stream insertion operator (<<)
